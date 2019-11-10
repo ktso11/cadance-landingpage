@@ -1,5 +1,10 @@
 
 @font-face {
+  font-family: 'Rubik-Medium';
+  src: url('assets/fonts/Rubik-Medium.ttf') format('truetype');
+}
+
+@font-face {
   font-family: 'Rubik';
   src: url('assets/fonts/Rubik-Medium.ttf') format('truetype');
 }
@@ -12,10 +17,12 @@
 :root {
   --white-color: #fff;
   --pale-grey-color: #f8f8f8;
+  --dark-grey-color: #484848;
   --default-black-color: #231F20;
   --red-color: #EA1C24;
   --default-font: "Rubik";
   --default-font-light: "Rubik Light";
+  --default-font-medium: 'Rubik-Medium';
   --default-size-font: 16px;
   --medium-size-font: 1.1875em; /* 19px */
   --large-size-font: 1.5em; /* 25px */
@@ -23,6 +30,10 @@
   --medium-header-font: 3.43em; /* 55px*/
   --large-header-font: 4.5em; /* 72px */
   --small-margin: 1em;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
@@ -145,7 +156,7 @@ h3 {
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  padding: 4em 0em 4em 3em;
+  padding: 4em 0em 0em 3em;
   margin: auto 0;
   
 }
@@ -164,6 +175,109 @@ h3 {
   color: var(--red-color);
   font-weight: 800;
   font-size: var(--medium-size-font);
+}
+
+/* Section 4 - Partnership/Cadence and Toshiba */
+
+.partnership {
+  background-color: var(--dark-grey-color);
+  position: relative;
+  color: var(--white-color);
+  border: none;
+  margin-top: 4em;
+  height: auto;
+}
+
+.partnership__bg-img {
+  position: absolute;
+  height: 100%;
+}
+
+.partnership__logo {
+  position: absolute;
+  z-index: 1;
+  right: 0;
+}
+
+.partnership__description {
+  margin: 25em 6em 8em 6em;
+}
+
+.partnership__img {
+  padding: 15em 3em;
+}
+
+.partnership label {
+  text-transform: uppercase;
+  letter-spacing: .5em;
+  font-size: var(--medium-size-font);
+}
+.partnership__description h2{
+  line-height: 1.5em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.partnership p {
+  font-size: var(--large-size-font);
+}
+
+.partnership button {
+  color: var(--white-color);
+  border: solid .125em var(--white-color);
+  background-color: transparent;
+  padding: 1em 4em;
+  font-size: var(--medium-size-font);
+}
+
+/* Section 5 - Driving innovation */
+
+.innovation{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 3em;
+  padding-bottom: 4em;
+}
+
+.innovation h2 {
+  margin: 1.5em;
+}
+
+.innovation__row {
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.innovation__article {
+  margin: .5em;
+  padding: 0;
+  position: relative;
+  width: 21.25em !important;
+  height: 31em;
+}
+
+.innovation__article-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.innovation__article-label {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 4em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1em;
+  margin: 0;
+  font-size: var(--small-header-font);
+  background:rgba(0,0,0,0.8);
+  color: var(--white-color);
 }
 
 @media screen and (max-width: 900px){
