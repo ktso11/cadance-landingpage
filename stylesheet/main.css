@@ -1,0 +1,173 @@
+
+@font-face {
+  font-family: 'Rubik';
+  src: url('assets/fonts/Rubik-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Rubik Light';
+  src: url('assets/fonts/Rubik-Light.ttf') format('truetype');
+}
+
+:root {
+  --white-color: #fff;
+  --pale-grey-color: #f8f8f8;
+  --default-black-color: #231F20;
+  --red-color: #EA1C24;
+  --default-font: "Rubik";
+  --default-font-light: "Rubik Light";
+  --default-size-font: 16px;
+  --medium-size-font: 1.1875em; /* 19px */
+  --large-size-font: 1.5em; /* 25px */
+  --small-header-font: 2.1875em; /* 35px */
+  --medium-header-font: 3.43em; /* 55px*/
+  --large-header-font: 4.5em; /* 72px */
+  --small-margin: 1em;
+}
+
+body {
+  font-size: var(--default-size-font);
+  font-family: var(--default-font);
+  color: var(--default-black-color);
+}
+
+h1 {
+  font-size: var(--large-header-font);
+  font-weight: normal;
+ }
+
+h2 {
+  font-size: var(--medium-header-font);
+  font-weight: 100;
+}
+
+h3 {
+  font-size: var(--small-header-font);
+ }
+
+/* Nav bar */
+.navbar {
+  letter-spacing: 0.04em;
+}
+
+.nav-link,
+.navbar-brand, footer a {
+  letter-spacing: 0.1em;
+}
+
+.navbar img{
+  margin-top: 2em;
+}
+
+.nav-link {
+  margin-right: 2.5em;
+}
+
+.navbar-collapse {
+  justify-content: flex-end;
+}
+
+/* Section One - Hero */
+.hero {
+  color: var(--white-color);
+}
+
+.hero h1 {
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.hero h3 {
+  line-height: 1.5em;
+  font-weight: lighter;
+  margin: var(--small-margin) auto;
+  width: 20em;
+}
+
+.hero button {
+  color: var(--white-color);
+  border: solid .125em var(--white-color);
+  background-color: transparent;
+  padding: 1em 2em;
+  font-size: var(--medium-size-font);
+}
+
+.hero__container {
+  background: url("../assets/hero.png") no-repeat ;
+  background-position: center;
+  background-size: cover;
+  height: 55em;
+  width: 100%;
+}
+
+.hero__content {
+  height: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Section 2 - Menu */
+.menu__group {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 3.5em 2em;
+  width: 13em;
+  font-size: 1.2em;
+}
+
+.menu h2 {
+  font-family: var(--default-font-light);
+}
+
+.menu label {
+  margin-top: 3em;
+}
+
+
+/* Section 3 - Intelligent Design Zone */
+
+.design-zone__container{
+  background-color: var(--pale-grey-color);
+  padding: 6em 2em;
+}
+
+.design-zone__header{
+  text-align: center;
+}
+
+.design-zone__article {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 4em 0em 4em 3em;
+  margin: auto 0;
+  
+}
+.design-zone__article-wrapper {
+  display: flex;
+  justify-content: center;
+}
+.design-zone__label{
+  font-size: var(--large-size-font);
+  font-weight: normal;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.design-zone a {
+  color: var(--red-color);
+  font-weight: 800;
+  font-size: var(--medium-size-font);
+}
+
+@media screen and (max-width: 900px){
+  :root {
+    --default-size-font: 10px;
+  }
+}
