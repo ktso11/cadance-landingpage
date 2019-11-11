@@ -1,4 +1,38 @@
 $(document).ready(function() {
+
+  function isVisible(el) {
+    //get the element position
+    let position = el.getBoundingClientRect();
+    let positionFromTop = -100;
+
+    //window.innerHeight is from the top viewport to the bottom
+    //if the element is visible positiontop - innerheight will be positive
+    if(position.top - window.innerHeight < positionFromTop){
+      return true;
+    } else {
+      return false;
+    }
+  };
+
+  function scanEl(){
+    // grab every class hidden pass to isVisible to deterine location from viewport
+    let sections = document.querySelectorAll('.hidden');
+    sections.forEach(function(section){
+      if(isVisible(section)){
+        //if location to viewport is at the right position. remove hidden class
+        section.classList.remove('hidden')
+      }
+    })
+  };
+  //If application is big, will have to optimize for adding a timer to prevent multiple events being fires
+  document.addEventListener("scroll", scanEl);
+ 
+
+
+
+
+
+
   const menu_icon = $(".menu__group");
   const innovation_icon = $(".innovation__article");
 
@@ -82,19 +116,6 @@ $(document).ready(function() {
       );
     });
   }
-
-  // Event Listeners
-  menu_icon.each(function() {
-    $(this).mouseover(function() {
-      $(this).children("label")
-        .css("background-color", "var(--pink-color");
-    });
-    $(this).mouseout(function() {
-      $(this)
-        .children("label")
-        .css("background-color", "var(--white-color)");
-    });
-  });
 
   innovation_icon.each(function() {
     $(this).mouseover(function() {

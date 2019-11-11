@@ -109,6 +109,7 @@ footer a {
   justify-content: flex-end;
 }
 
+
 /* Section One - Hero */
 .hero {
   color: var(--white-color);
@@ -140,6 +141,7 @@ footer a {
   background-size: cover;
   height: 55em;
   width: 100%;
+
 }
 
 .hero__content {
@@ -163,6 +165,10 @@ footer a {
   padding: 3.5em 2em;
   width: 13em;
   cursor: pointer;
+}
+
+.menu__group:hover label {
+  background-color: pink
 }
 
 .menu h2 {
@@ -460,6 +466,16 @@ button:hover {
 .slider__interactions-icons:hover {
   color: var(--red-color);
 }
+
+section {
+  opacity: 1;
+  transition: opacity 2s ease;
+}
+
+.hidden {
+  opacity: 0;
+}
+
 
 @media screen and (max-width: 1600px) {
   :root {
