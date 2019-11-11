@@ -1,29 +1,31 @@
-
 @font-face {
-  font-family: 'Rubik-Medium';
-  src: url('assets/fonts/Rubik-Medium.ttf') format('truetype');
+  font-family: "Rubik-Medium";
+  src: url("assets/fonts/Rubik-Medium.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'Rubik';
-  src: url('assets/fonts/Rubik-Medium.ttf') format('truetype');
+  font-family: "Rubik";
+  src: url("assets/fonts/Rubik-Medium.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'Rubik Light';
-  src: url('assets/fonts/Rubik-Light.ttf') format('truetype');
+  font-family: "Rubik Light";
+  src: url("assets/fonts/Rubik-Light.ttf") format("truetype");
 }
 
 :root {
   --white-color: #fff;
   --pale-grey-color: #f8f8f8;
   --dark-grey-color: #484848;
-  --default-black-color: #231F20;
-  --red-color: #EA1C24;
+  --blue-link-color: #4190b1;
+  --default-black-color: #231f20;
+  --red-color: #ea1c24;
+  --pink-color: #e98488;
   --default-font: "Rubik";
   --default-font-light: "Rubik Light";
-  --default-font-medium: 'Rubik-Medium';
+  --default-font-medium: "Rubik-Medium";
   --default-size-font: 16px;
+  --small-size-font: 1.0625em; /* 17pc */
   --medium-size-font: 1.1875em; /* 19px */
   --large-size-font: 1.5em; /* 25px */
   --small-header-font: 2.1875em; /* 35px */
@@ -45,7 +47,7 @@ body {
 h1 {
   font-size: var(--large-header-font);
   font-weight: normal;
- }
+}
 
 h2 {
   font-size: var(--medium-header-font);
@@ -54,20 +56,43 @@ h2 {
 
 h3 {
   font-size: var(--small-header-font);
- }
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.hero,
+.menu,
+.design-zone {
+  width: 97%;
+  margin: 0 auto;
+}
 
 /* Nav bar */
 .navbar {
   letter-spacing: 0.04em;
+  font-size: var(--medium-size-font);
+}
+
+.navbar a:hover {
+  color: var(--red-color);
 }
 
 .nav-link,
-.navbar-brand, footer a {
+.navbar-brand,
+footer a {
   letter-spacing: 0.1em;
+  color: var(--default-black-color);
 }
 
-.navbar img{
-  margin-top: 2em;
+.navbar img {
+  margin: 1.5em;
 }
 
 .nav-link {
@@ -97,14 +122,14 @@ h3 {
 
 .hero button {
   color: var(--white-color);
-  border: solid .125em var(--white-color);
+  border: solid 0.125em var(--white-color);
   background-color: transparent;
   padding: 1em 2em;
   font-size: var(--medium-size-font);
 }
 
 .hero__container {
-  background: url("../assets/hero.png") no-repeat ;
+  background: url("../assets/hero.png") no-repeat;
   background-position: center;
   background-size: cover;
   height: 55em;
@@ -121,6 +146,9 @@ h3 {
 }
 
 /* Section 2 - Menu */
+.menu {
+  font-size: var(--medium-size-font);
+}
 .menu__group {
   display: flex;
   flex-direction: column;
@@ -128,7 +156,7 @@ h3 {
   align-items: center;
   padding: 3.5em 2em;
   width: 13em;
-  font-size: 1.2em;
+  cursor: pointer;
 }
 
 .menu h2 {
@@ -139,15 +167,14 @@ h3 {
   margin-top: 3em;
 }
 
-
 /* Section 3 - Intelligent Design Zone */
 
-.design-zone__container{
+.design-zone__container {
   background-color: var(--pale-grey-color);
   padding: 6em 2em;
 }
 
-.design-zone__header{
+.design-zone__header {
   text-align: center;
 }
 
@@ -158,13 +185,18 @@ h3 {
   justify-content: center;
   padding: 4em 0em 0em 3em;
   margin: auto 0;
-  
+  cursor: pointer;
+}
+
+.design-zone__article-img {
+  width: 80%;
+  height: auto;
 }
 .design-zone__article-wrapper {
   display: flex;
   justify-content: center;
 }
-.design-zone__label{
+.design-zone__label {
   font-size: var(--large-size-font);
   font-weight: normal;
   margin-top: 1em;
@@ -180,17 +212,14 @@ h3 {
 /* Section 4 - Partnership/Cadence and Toshiba */
 
 .partnership {
+  background: url("../assets/icons/partner-patterns.png") no-repeat;
+  background-position: top left;
+  background-size: 90%;
   background-color: var(--dark-grey-color);
   position: relative;
   color: var(--white-color);
   border: none;
   margin-top: 4em;
-  height: auto;
-}
-
-.partnership__bg-img {
-  position: absolute;
-  height: 100%;
 }
 
 .partnership__logo {
@@ -209,10 +238,10 @@ h3 {
 
 .partnership label {
   text-transform: uppercase;
-  letter-spacing: .5em;
+  letter-spacing: 0.5em;
   font-size: var(--medium-size-font);
 }
-.partnership__description h2{
+.partnership__description h2 {
   line-height: 1.5em;
   margin-top: 1em;
   margin-bottom: 1em;
@@ -224,7 +253,7 @@ h3 {
 
 .partnership button {
   color: var(--white-color);
-  border: solid .125em var(--white-color);
+  border: solid 0.125em var(--white-color);
   background-color: transparent;
   padding: 1em 4em;
   font-size: var(--medium-size-font);
@@ -232,7 +261,7 @@ h3 {
 
 /* Section 5 - Driving innovation */
 
-.innovation{
+.innovation {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -250,11 +279,12 @@ h3 {
 }
 
 .innovation__article {
-  margin: .5em;
+  margin: 0.5em;
   padding: 0;
   position: relative;
   width: 21.25em !important;
   height: 31em;
+  cursor: pointer;
 }
 
 .innovation__article-img {
@@ -276,12 +306,218 @@ h3 {
   padding: 1em;
   margin: 0;
   font-size: var(--small-header-font);
-  background:rgba(0,0,0,0.8);
+  background: rgba(0, 0, 0, 0.8);
   color: var(--white-color);
 }
 
-@media screen and (max-width: 900px){
+/* Section 6 - Slider */
+
+.slider {
+  background: url("../assets/slider-bg.png") no-repeat;
+  background-color: var(--pale-grey-color);
+  background-position: right;
+  padding-top: 7em;
+  padding-bottom: 5em;
+  font-size: var(--small-size-font);
+}
+
+.slider__article {
+  background-color: var(--white-color);
+  padding: 1.25em;
+  margin: 0.5em 0.5em;
+  width: 27%;
+  cursor: pointer;
+  box-shadow: 0.125em 0.125em 0.3em rgba(0, 0, 0, 0.25);
+}
+
+.slider__header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.slider__date {
+  opacity: 0.5;
+  margin: 0;
+  font-size: var(--small-size-font);
+}
+
+.slider__interactions-icons {
+  margin-right: 1em;
+}
+
+.slider__row {
+  justify-content: center;
+}
+
+/* .slider__article-img{
+
+} */
+.slider__article-img-container {
+  margin: 1em auto;
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+  display: inline-block;
+  height: 2.25em !important;
+  width: 2.25em !important;
+  margin: auto;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+.slider__bg-img {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: auto;
+}
+
+/* Section 7 - footer */
+.footer {
+  background: url("../assets/footer-bg.png") no-repeat;
+  background-position: top;
+  background-size: 120%;
+  background-color: var(--dark-grey-color);
+  color: var(--white-color);
+  padding: 5em;
+  font-size: var(--small-size-font);
+}
+
+.footer input {
+  width: 100%;
+}
+
+.footer a {
+  color: var(--blue-link-color);
+}
+
+.footer__workplace-img {
+  text-align: right;
+  align-items: flex-end;
+  width: auto;
+}
+
+.footer__workplace {
+  display: flex;
+  flex-direction: row;
+}
+.footer a:hover {
+  color: var(--red-color);
+}
+
+.footer ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.footer__subscribe {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.footer__email-star {
+  color: var(--red-color);
+}
+
+.footer__button {
+  background-color: #00b7fb;
+  padding: 0.5em 1em;
+  color: var(--white-color);
+  border: none;
+  margin-top: 0.5em;
+}
+
+.footer__subcribe-row {
+  margin-top: 1.5em;
+}
+
+/* CSS state */
+button {
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: var(--white-color);
+  color: var(--default-black-color);
+}
+
+.innovation-hover {
+  background-color: var(--white-color);
+  color: var(--default-black-color);
+  opacity: 0.8;
+}
+
+.slider__interactions-icons:hover {
+  color: var(--red-color);
+}
+
+@media screen and (max-width: 1600px) {
   :root {
     --default-size-font: 10px;
+    --small-size-font: 14px;
+    --medium-size-font: 16px;
+    --large-size-font: 18px;
+    --small-header-font: 18px;
+    --medium-header-font: 28px;
+    --large-header-font: 32px;
+  }
+  .menu__group-icon {
+    width: 50px;
+    height: auto;
+  }
+
+  .menu__container {
+    padding: 0 4em;
+  }
+
+  .design-zone__container {
+    padding: 6em 6em;
+  }
+
+  .partnership__img {
+    width: 80%;
+    height: auto;
+    /* display: none; */
+  }
+
+  .partnership__logo img {
+    height: 80px;
+    width: auto;
+  }
+
+  .innovation__pattern-img {
+    height: 100px;
+    width: auto;
+  }
+
+  .carousel-control-next,
+  .carousel-control-prev {
+    height: 1em !important;
+    width: 1em !important;
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .partnership__img {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .nav-link {
+    margin-right: 0.8em;
+  }
+  .navbar img {
+    margin: 0.8em;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .slider__cadence-logo {
+    width: 50%;
   }
 }
