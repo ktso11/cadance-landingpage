@@ -93,6 +93,12 @@ footer a {
 
 .navbar img {
   margin: 1.5em;
+  height: 1.8em ;
+  width: auto;
+}
+.navbar-icon {
+  height: 1.4em !important;
+  width: auto;
 }
 
 .nav-link {
@@ -505,6 +511,12 @@ button:hover {
   .partnership__img {
     display: none;
   }
+  .navbar img {
+    margin: 1em;
+    height: 1em ;
+    width: auto;
+  }
+
 }
 
 @media screen and (max-width: 950px) {
