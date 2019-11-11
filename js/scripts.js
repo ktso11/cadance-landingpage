@@ -67,7 +67,7 @@ $(document).ready(function() {
         </article>`
       );
     }
-  }
+  };
 
   function appendDesignZone() {
     design_zone.map((design, i) => {
@@ -86,13 +86,12 @@ $(document).ready(function() {
   // Event Listeners
   menu_icon.each(function() {
     $(this).mouseover(function() {
-      $(this)
-        .children("a")
-        .css("background-color", "yellow");
+      $(this).children("label")
+        .css("background-color", "var(--pink-color");
     });
     $(this).mouseout(function() {
       $(this)
-        .children("a")
+        .children("label")
         .css("background-color", "var(--white-color)");
     });
   });
