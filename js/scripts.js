@@ -86,20 +86,7 @@ $(document).ready(function() {
       );
     });
   }
-
-  innovation_icon.each(function() {
-    $(this).mouseover(function() {
-      $(this)
-        .children(".innovation__article-label")
-        .addClass("innovation-hover");
-    });
-    $(this).mouseout(function() {
-      $(this)
-        .children(".innovation__article-label")
-        .removeClass("innovation-hover");
-    });
-  });
-
+  
   function stickyNav() {
     if (window.innerWidth > 770 && window.pageYOffset > lastScroll){
       navbar.addClass('sticky')
@@ -118,7 +105,7 @@ $(document).ready(function() {
     let position = el.getBoundingClientRect();
     let positionFromTop = -100;
 
-    //if the element is visible positiontop - innerheight will be positive
+    //if the element is visible positiontop - innerheight will be positive int
     if(position.top - window.innerHeight < positionFromTop){
       return true;
     } else {

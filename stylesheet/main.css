@@ -318,6 +318,12 @@ footer a {
   cursor: pointer;
 }
 
+.innovation__article:hover .innovation__article-label {
+  background-color: var(--white-color);
+  color: var(--default-black-color);
+  opacity: 0.8;
+}
+
 .innovation__article-img {
   position: absolute;
   width: 100%;
@@ -472,12 +478,6 @@ button {
 button:hover {
   background-color: var(--white-color);
   color: var(--default-black-color);
-}
-
-.innovation-hover {
-  background-color: var(--white-color);
-  color: var(--default-black-color);
-  opacity: 0.8;
 }
 
 .slider__interactions-icons:hover {
