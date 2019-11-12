@@ -38,6 +38,11 @@
   box-sizing: border-box;
 }
 
+html, body {
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+
 body {
   font-size: var(--default-size-font);
   font-family: var(--default-font);
@@ -72,6 +77,11 @@ a:hover {
 .design-zone {
   width: 97%;
   margin: 0 auto;
+}
+
+.hero, .navbar, .menu, .design-zone, .partnership, .innovation,.slider,.footer {
+  overflow: hidden;
+  
 }
 
 /* Nav bar */
@@ -234,6 +244,7 @@ footer a {
   color: var(--white-color);
   border: none;
   margin-top: 4em;
+  max-width: 100%;
   overflow: hidden;
 }
 
@@ -339,6 +350,7 @@ footer a {
   padding-top: 7em;
   padding-bottom: 5em;
   font-size: var(--small-size-font);
+  max-width: 100%;
 }
 
 .slider__article {
@@ -481,9 +493,7 @@ section {
   opacity: 0;
 }
 .navbar {
-  /* padding-top: 3em; */
-  /* transition-duration: 1s; */
-  /* margin: 0; */
+  padding: 1em 3em;
   transition-duration: .8s;
   z-index: 10;
   opacity: 1;
