@@ -1,40 +1,11 @@
 $(document).ready(function() {
 
-  function isVisible(el) {
-    //get the element position
-    let position = el.getBoundingClientRect();
-    let positionFromTop = -100;
-
-    //window.innerHeight is from the top viewport to the bottom
-    //if the element is visible positiontop - innerheight will be positive
-    if(position.top - window.innerHeight < positionFromTop){
-      return true;
-    } else {
-      return false;
-    }
-  };
-
-  function scanEl(){
-    // grab every class hidden pass to isVisible to deterine location from viewport
-    let sections = document.querySelectorAll('.hidden');
-    sections.forEach(function(section){
-      if(isVisible(section)){
-        //if location to viewport is at the right position. remove hidden class
-        section.classList.remove('hidden')
-      }
-    })
-  };
-  //If application is big, will have to optimize for adding a timer to prevent multiple events being fires
-  document.addEventListener("scroll", scanEl);
- 
-
-
-
-
-
-
+  const navbar = $('nav');
+  const logo = $('.navbar__logo');
   const menu_icon = $(".menu__group");
   const innovation_icon = $(".innovation__article");
+  let navPosition = navbar.offsetTop;
+  let lastScroll = window.pageYOffset;
 
   const design_zone = [
     {
@@ -74,7 +45,6 @@ $(document).ready(function() {
       date: "Oct 03"
     }
   ];
-
 
 
   // Append articles
@@ -130,7 +100,46 @@ $(document).ready(function() {
     });
   });
 
+  function stickyNav() {
+    if (window.innerWidth > 770 && window.pageYOffset > lastScroll){
+      navbar.addClass('sticky')
+      $('.sticky').css({ height: '3em'});
+      logo.css({opacity: "0"})
+    } else {
+      logo.css({opacity: "1"})
+      $('.sticky').css({ height: '5em'});
+    }
+    lastScroll = window.pageYOffset;
+  };
 
+
+  //Fade In Content Effect
+  function isVisible(el) {
+    let position = el.getBoundingClientRect();
+    let positionFromTop = -100;
+
+    //if the element is visible positiontop - innerheight will be positive
+    if(position.top - window.innerHeight < positionFromTop){
+      return true;
+    } else {
+      return false;
+    }
+  };
+
+  function scanEl(){
+    let sections = document.querySelectorAll('.hidden');
+    sections.forEach(function(section){
+      if(isVisible(section)){
+        //if el location to viewport is true, remove hidden class
+        section.classList.remove('hidden')
+      }
+    })
+  };
+
+  document.addEventListener("scroll", function(){
+    scanEl()
+    stickyNav()
+  });
 
   appendDesignZone();
   appendSlider();
